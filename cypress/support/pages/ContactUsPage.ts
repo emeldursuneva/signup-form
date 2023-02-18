@@ -9,33 +9,45 @@ export class ContactUsPage{
         cy.url().should('contain','contactus')
     }
 
-    public happyPathContactUsPage(){
+    public EnterValidName(){
+        
         cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
+    }
+    
+        public EnterValidEmail(){  
+            cy.wait(500)  
+
         cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
+    }
+
+    public EnterValidComment(){
+        cy.wait(500)
         cy.get('#wpforms-2766-field_2').click().type('Test')
+    }
+
+    public sendForm(){
+        cy.wait(500)
         cy.get('#wpforms-submit-2766').click()
+    }
+
+    public happyPathMessageCheck(){
+
         cy.get('#wpforms-confirmation-2766').contains('Thanks for contacting us! We will be in touch with you shortly.').should('be.visible')
     }
 
-    public verifyName(){
-        cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
-        cy.get('#wpforms-2766-field_2').click().type('Test')
-        cy.get('#wpforms-submit-2766').click()
+    public withoutNameErrorMessageCheck(){
+    
         cy.get('label[id=wpforms-2766-field_0-error]').contains('This field is required.').should('be.visible')
     }
 
-    public verifyContactUsEmail(){
-        cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
-        cy.get('#wpforms-2766-field_2').click().type('Test')
-        cy.get('#wpforms-submit-2766').click()
+    public withoutEmailErrorMessageCheck(){
+    
         cy.get('label[id=wpforms-2766-field_1-error]').contains('This field is required.').should('be.visible')
 
     }
 
-    public verifyCommentorMessage(){
-        cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
-        cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
-        cy.get('#wpforms-submit-2766').click()
+    public withoutCommentorMessageErrorCheck(){
+        
         cy.get('label[id=wpforms-2766-field_2-error]').contains('This field is required.').should('be.visible')
     }
 

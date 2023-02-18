@@ -7,8 +7,8 @@ describe ('Login Page Verifications', ()=>
 
     beforeEach(() => {
 
-    loginPage = new LoginPage();
-    loginPage.landLoginPage();
+        loginPage = new LoginPage();
+        loginPage.landLoginPage();
 
     })
   

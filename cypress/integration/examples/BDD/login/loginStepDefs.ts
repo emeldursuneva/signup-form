@@ -4,51 +4,44 @@ import { LoginPage } from "../../../../support/pages/LoginPage"
 let loginPage = new LoginPage()
 
 
-
-Given('User in the Eva Health login page', () => {
-    loginPage.landLoginPage();
-
+Given('User on the Eva Health login page', () => {
+    
+    loginPage.landLoginPage()
 })
 
 When('User enters invalid email', () => {
 
-    loginPage.invalidEmailEntry();
+    loginPage.invalidEmailEntry()
 })
 
 Then('User sees that Email is invalid error message', () => {
 
-    loginPage.invalidEmailMessageCheck();
+    loginPage.invalidEmailMessageCheck()
 })
-
 
 When('User enters invalid Password', () => {
 
-    loginPage.invalidPasswordEntry();
+    loginPage.invalidPasswordEntry()
 
 })
-
 
 Then('User sees that Password must be at least 10 characters error message', () => {
 
-   loginPage.invalidPasswordMessageCheck();
+   loginPage.invalidPasswordMessageCheck()
 
 })
 
-
-
 When('User enters incorrect credentials', () => {
 
-  loginPage.incorrectCredentialsEntry();
+  loginPage.incorrectCredentialsEntry()
 
 })
 
 Then('User sees that Username or password was incorrect, please try again error message', () => {
 
-   loginPage.incorrectCredentialsMessageCheck();
+   loginPage.incorrectCredentialsMessageCheck()
 
 })
-
-
 
 When('User clicks on the Forgot Password button', () => {
 
