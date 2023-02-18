@@ -15,7 +15,7 @@ When('User enters invalid email', () => {
     loginPage.invalidEmailEntry();
 })
 
-Then('User sees Email is invalid error message', () => {
+Then('User sees that Email is invalid error message', () => {
 
     loginPage.invalidEmailMessageCheck();
 })
@@ -28,7 +28,7 @@ When('User enters invalid Password', () => {
 })
 
 
-Then('User sees Password must be at least 10 characters error message', () => {
+Then('User sees that Password must be at least 10 characters error message', () => {
 
    loginPage.invalidPasswordMessageCheck();
 

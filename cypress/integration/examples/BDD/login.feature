@@ -4,7 +4,7 @@ Feature: Login Page Validation
     Feature Description
 
     Background: Login Page
-    Given User in the eva health login page
+    Given User in the Eva Health login page
 
     Scenario: Email verification
     When User enters invalid email 
