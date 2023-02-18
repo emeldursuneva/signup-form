@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 export class ContactUsPage{
 
     public landContactUsPage(){
@@ -9,22 +10,22 @@ export class ContactUsPage{
     }
 
     public happyPathContactUsPage(){
-        cy.get('#wpforms-2766-field_0').click().type('CypressAutomationTest')
-        cy.get('#wpforms-2766-field_1').click().type('CypressAutomationTest@gmail.com')
+        cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
+        cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
         cy.get('#wpforms-2766-field_2').click().type('Test')
         cy.get('#wpforms-submit-2766').click()
         cy.get('#wpforms-confirmation-2766').contains('Thanks for contacting us! We will be in touch with you shortly.').should('be.visible')
     }
 
     public verifyName(){
-        cy.get('#wpforms-2766-field_1').click().type('CypressAutomationTest@gmail.com')
+        cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
         cy.get('#wpforms-2766-field_2').click().type('Test')
         cy.get('#wpforms-submit-2766').click()
         cy.get('label[id=wpforms-2766-field_0-error]').contains('This field is required.').should('be.visible')
     }
 
     public verifyContactUsEmail(){
-        cy.get('#wpforms-2766-field_0').click().type('CypressAutomationTest')
+        cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
         cy.get('#wpforms-2766-field_2').click().type('Test')
         cy.get('#wpforms-submit-2766').click()
         cy.get('label[id=wpforms-2766-field_1-error]').contains('This field is required.').should('be.visible')
@@ -32,8 +33,8 @@ export class ContactUsPage{
     }
 
     public verifyCommentorMessage(){
-        cy.get('#wpforms-2766-field_0').click().type('CypressAutomationTest')
-        cy.get('#wpforms-2766-field_1').click().type('CypressAutomationTest@gmail.com')
+        cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
+        cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
         cy.get('#wpforms-submit-2766').click()
         cy.get('label[id=wpforms-2766-field_2-error]').contains('This field is required.').should('be.visible')
     }

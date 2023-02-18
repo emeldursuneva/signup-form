@@ -12,30 +12,33 @@ describe ('Login Page Verifications', ()=>
 
     })
   
-
-    it('Email verification', ()=>
+    it('Email verification', ()=> {
+        
+        loginPage.invalidEmailEntry();
+        loginPage.invalidEmailMessageCheck();
     
-    {loginPage.verifyEmail();})
+    })
 
+    
     it('Password with 9 characters', ()=> {
 
-        loginPage.verifyPassword();
+        loginPage.invalidPasswordEntry();
+        loginPage.invalidPasswordMessageCheck();
        
-
     })
 
      it('Incorrect credentials', ()=> {
 
-        loginPage.verifyIncorrectCredentials();
+        loginPage.incorrectCredentialsEntry();
+        loginPage.incorrectCredentialsMessageCheck();
             
-        
-            })
+    })
 
     it('Forgot Password Verification', ()=> {
 
-        loginPage.verifyForgotPassword();
+        loginPage.forgotPasswordEmailEntry();
+        loginPage.forgotPasswordMessageCheck();
 
-
-            })
+    })
       
         });
