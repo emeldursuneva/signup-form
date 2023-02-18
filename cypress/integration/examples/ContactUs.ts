@@ -14,25 +14,37 @@ describe ('Contact Us Page Verifications', ()=>
 
     it('Contact Us Page Happy Path', function() {
 
-        contactUsPage.happyPathContactUsPage();
+        contactUsPage.EnterValidName()
+        contactUsPage.EnterValidEmail()
+        contactUsPage.EnterValidComment()
+        contactUsPage.sendForm()
+        contactUsPage.happyPathMessageCheck()
 
     })
 
-    it('Name verification', function() {
+    it('Without Name Error Message Verification', function() {
 
-        contactUsPage.verifyName();
-       
+        contactUsPage.EnterValidEmail()
+        contactUsPage.EnterValidComment()
+        contactUsPage.sendForm()
+        contactUsPage.withoutNameErrorMessageCheck()      
     })
 
-    it('Email verification', function() {
+    it('Without Email Error Message Verification', function() {
 
-        contactUsPage.verifyContactUsEmail();
+        contactUsPage.EnterValidName()
+        contactUsPage.EnterValidComment()
+        contactUsPage.sendForm()
+        contactUsPage.withoutEmailErrorMessageCheck()
         
     })
 
-    it('Comment or message Verification', function() {
+    it('Without Comment or Message Error Verification', function() {
 
-        contactUsPage.verifyCommentorMessage();
+        contactUsPage.EnterValidName()
+        contactUsPage.EnterValidEmail()
+        contactUsPage.sendForm()
+        contactUsPage.withoutCommentorMessageErrorCheck()
 
         
     })

@@ -2,6 +2,7 @@
 export class ContactUsPage{
 
     public landContactUsPage(){
+
         cy.visit('https://evahealth.co.uk')
         cy.get("#hs-eu-confirmation-button").click()
         cy.get('.fusion-icon').click()
@@ -10,13 +11,11 @@ export class ContactUsPage{
     }
 
     public EnterValidName(){
-        
         cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
     }
     
-        public EnterValidEmail(){  
-            cy.wait(500)  
-
+    public EnterValidEmail(){  
+        cy.wait(500)  
         cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
     }
 
@@ -31,23 +30,19 @@ export class ContactUsPage{
     }
 
     public happyPathMessageCheck(){
-
         cy.get('#wpforms-confirmation-2766').contains('Thanks for contacting us! We will be in touch with you shortly.').should('be.visible')
     }
 
     public withoutNameErrorMessageCheck(){
-    
         cy.get('label[id=wpforms-2766-field_0-error]').contains('This field is required.').should('be.visible')
     }
 
     public withoutEmailErrorMessageCheck(){
-    
         cy.get('label[id=wpforms-2766-field_1-error]').contains('This field is required.').should('be.visible')
 
     }
 
     public withoutCommentorMessageErrorCheck(){
-        
         cy.get('label[id=wpforms-2766-field_2-error]').contains('This field is required.').should('be.visible')
     }
 
