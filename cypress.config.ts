@@ -25,4 +25,7 @@ export default defineConfig({
     specPattern: "**/*.feature",
     setupNodeEvents,
   },
+  env:{
+    baseURL: 'https://evahealth.co.uk/'
+  }
 });

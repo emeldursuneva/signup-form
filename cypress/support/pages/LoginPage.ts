@@ -1,8 +1,13 @@
-export class LoginPage{
+/// <reference types="cypress" />
+import { BasePage } from '../../support/pages/BasePage';
+let basePage:BasePage
+basePage=new BasePage;
 
+export class LoginPage{
+       
 
 public landLoginPage(){
-        cy.visit('https://evahealth.co.uk')
+        cy.visit(Cypress.env('baseURL'))
         cy.get("#hs-eu-confirmation-button").click()
         cy.get('.fusion-icon').click()
         cy.get('#mobile-menu-main-menu-2 > [data-item-id="8635"] > .fusion-bar-highlight > .menu-text').click()
@@ -10,8 +15,8 @@ public landLoginPage(){
     }
 
 public invalidEmailEntry(){
-        cy.get('[data-testid="username"]').click().type('cypresstestautomation@g')
-        cy.get('[data-testid="password"]').click().type('1234567890')
+        cy.get('[data-testid="username"]').click().type(basePage.randomFirstName()+'@g')
+        cy.get('[data-testid="password"]').click().type(basePage.randompassword10())
         cy.get('[data-testid="button-login"]').click()
 
 }
@@ -22,8 +27,8 @@ public invalidEmailMessageCheck(){
 }
 
 public invalidPasswordEntry(){
-        cy.get('[data-testid="username"]').click().type('cypresstestautomation@gmail.com')
-        cy.get('[data-testid="password"]').click().type('123456789')
+        cy.get('[data-testid="username"]').click().type(basePage.randomEmail())
+        cy.get('[data-testid="password"]').click().type(basePage.randomPassword9())
         cy.get('[data-testid="button-login"]').click()
 }
 
@@ -32,8 +37,8 @@ public invalidPasswordMessageCheck(){
 }
 
 public incorrectCredentialsEntry(){
-        cy.get('[data-testid="username"]').click().type('cypresstestautomation@gmail.com')
-        cy.get('[data-testid="password"]').click().type('1234567890')
+        cy.get('[data-testid="username"]').click().type(basePage.randomEmail())
+        cy.get('[data-testid="password"]').click().type(basePage.randompassword10())
         cy.get('[data-testid="button-login"]').click()
 }
 
@@ -50,7 +55,7 @@ public forgotPasswordURLCheck(){
 }
 
 public forgotPasswordEmailEntry(){        
-        cy.get('input[name=username]').click().type('cypresstestautomation@hotmail.com')
+        cy.get('input[name=username]').click().type(basePage.randomEmail())
         cy.get('button[type=submit]').click()
 }
 

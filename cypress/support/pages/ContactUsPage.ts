@@ -1,9 +1,13 @@
 /// <reference types="cypress" />
+import { BasePage } from '../../support/pages/BasePage';
+let basePage:BasePage
+basePage=new BasePage;
+
 export class ContactUsPage{
 
     public landContactUsPage(){
 
-        cy.visit('https://evahealth.co.uk')
+        cy.visit(Cypress.env('baseURL'))
         cy.get("#hs-eu-confirmation-button").click()
         cy.get('.fusion-icon').click()
         cy.get('#mobile-menu-main-menu-2 > [data-item-id="1826"] > .fusion-bar-highlight > .menu-text').click()
@@ -11,12 +15,12 @@ export class ContactUsPage{
     }
 
     public EnterValidName(){
-        cy.get('#wpforms-2766-field_0').click().type('cypresstestautomation')
+        cy.get('#wpforms-2766-field_0').click().type(basePage.randomFirstName())
     }
     
     public EnterValidEmail(){  
         cy.wait(500)  
-        cy.get('#wpforms-2766-field_1').click().type('cypresstestautomation@gmail.com')
+        cy.get('#wpforms-2766-field_1').click().type(basePage.randomEmail())
     }
 
     public EnterValidComment(){

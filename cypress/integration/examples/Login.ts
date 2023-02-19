@@ -1,13 +1,16 @@
 ///<reference types = 'cypress'/>
 import { LoginPage } from '../../support/pages/LoginPage'; 
+import { BasePage } from '../../support/pages/BasePage';
 
 describe ('Login Page Verifications', ()=>
 {
     let loginPage:LoginPage;
+    let basePage:BasePage;
 
     beforeEach(() => {
 
         loginPage = new LoginPage();
+        basePage=new BasePage();
         loginPage.landLoginPage();
 
     })

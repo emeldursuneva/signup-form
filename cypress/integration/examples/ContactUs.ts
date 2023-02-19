@@ -4,7 +4,7 @@ import { ContactUsPage } from '../../support/pages/ContactUsPage';
 describe ('Contact Us Page Verifications', ()=>
 {
     let contactUsPage:ContactUsPage;
-
+  
     beforeEach(() => {
 
         contactUsPage = new ContactUsPage();
