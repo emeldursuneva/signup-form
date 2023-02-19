@@ -4,7 +4,8 @@ const randomEmail=faker.internet.email();
 const randomPassword10=faker.random.alphaNumeric(10);
 const randomPassword9=faker.random.alphaNumeric(9);
 export class BasePage{
-    public randomFirstName(){
+
+public randomFirstName(){
     return randomFirstName
 }
 public randomEmail(){
