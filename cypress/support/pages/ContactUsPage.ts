@@ -9,7 +9,6 @@ export class ContactUsPage{
 
         cy.visit(Cypress.env('baseURL'))
         cy.get("#hs-eu-confirmation-button").click()
-       // cy.get('.fusion-icon').click()
         cy.get('#menu-item-1826').click()
         cy.url().should('contain','contactus')
     }

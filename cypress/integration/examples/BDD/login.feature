@@ -1,7 +1,7 @@
 Feature: Login Page Validation
 
 
-    Feature Description
+  This feature will verify Positive and Negative Scenarios of Login Page
 
     Background: Login Page
         Given User on the Eva Health login page

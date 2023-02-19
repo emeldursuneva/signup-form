@@ -8,8 +8,7 @@ export class LoginPage{
 
 public landLoginPage(){
         cy.visit(Cypress.env('baseURL'))
-        cy.get("#hs-eu-confirmation-buttona").click()
-       // cy.get('.fusion-icon').click()
+        cy.get("#hs-eu-confirmation-button").click()
         cy.get('#menu-item-8635').click()
         
     }
