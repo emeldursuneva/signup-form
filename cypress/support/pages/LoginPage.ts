@@ -8,9 +8,9 @@ export class LoginPage{
 
 public landLoginPage(){
         cy.visit(Cypress.env('baseURL'))
-        cy.get("#hs-eu-confirmation-button").click()
-        cy.get('.fusion-icon').click()
-        cy.get('#mobile-menu-main-menu-2 > [data-item-id="8635"] > .fusion-bar-highlight > .menu-text').click()
+        cy.get("#hs-eu-confirmation-buttona").click()
+       // cy.get('.fusion-icon').click()
+        cy.get('#menu-item-8635').click()
         
     }
 

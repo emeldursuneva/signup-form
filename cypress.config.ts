@@ -27,5 +27,7 @@ export default defineConfig({
   },
   env:{
     baseURL: 'https://evahealth.co.uk/'
-  }
+  },
+  viewportWidth:1920,
+  viewportHeight:1080,
 });
