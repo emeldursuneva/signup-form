@@ -14,21 +14,22 @@ export class ContactUsPage{
     }
 
     public EnterValidName(){
+        cy.wait(1000) 
         cy.get('#wpforms-2766-field_0').click().type(basePage.randomFirstName())
     }
     
     public EnterValidEmail(){  
-        cy.wait(500)  
+        cy.wait(1000)  
         cy.get('#wpforms-2766-field_1').click().type(basePage.randomEmail())
     }
 
     public EnterValidComment(){
-        cy.wait(500)
+        cy.wait(1000)
         cy.get('#wpforms-2766-field_2').click().type('Test')
     }
 
     public sendForm(){
-        cy.wait(500)
+        cy.wait(1000)
         cy.get('#wpforms-submit-2766').click()
     }
 
